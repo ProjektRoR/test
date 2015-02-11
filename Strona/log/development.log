@@ -1,0 +1,213 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (148.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (97.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateUsers (20150210155214)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (4.0ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "surname" varchar(255), "mail" varchar(255), "password" varchar(255), "account_type" varchar(255), "favourite" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20150210155214')[0m
+  [1m[35m (113.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2015-02-10 16:53:11 +0100
+Connecting to database specified by database.yml
+Served asset /rails.png - 304 Not Modified (59ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-02-10 16:53:15 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered users/index.html.erb within layouts/application (11.0ms)
+Warning. Error encountered while saving cache C:/Users/pk/projekty_github/Strona/tmp/cache/sass/7f291a1e8d7eb9c4a27c31b6bfcccd7f15f09ce6/scaffolds.css.scssc: can't dump anonymous class #<Class:0x2b353d8>
+Compiled scaffolds.css  (57ms)  (pid 4524)
+Warning. Error encountered while saving cache C:/Users/pk/projekty_github/Strona/tmp/cache/sass/7f291a1e8d7eb9c4a27c31b6bfcccd7f15f09ce6/users.css.scssc: can't dump anonymous class #<Class:0x2b353d8>
+Compiled users.css  (5ms)  (pid 4524)
+Compiled application.css  (292ms)  (pid 4524)
+Compiled jquery.js  (4ms)  (pid 4524)
+Compiled jquery_ujs.js  (0ms)  (pid 4524)
+Compiled users.js  (486ms)  (pid 4524)
+Compiled application.js  (718ms)  (pid 4524)
+Completed 200 OK in 1599.1ms (Views: 1352.1ms | ActiveRecord: 35.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-10 16:53:17 +0100
+Served asset /application.css - 200 OK (34ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-10 16:53:18 +0100
+Served asset /users.css - 200 OK (3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-02-10 16:53:18 +0100
+Served asset /scaffolds.css - 200 OK (8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-10 16:53:18 +0100
+Served asset /jquery.js - 200 OK (76ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-10 16:53:18 +0100
+Served asset /jquery_ujs.js - 200 OK (12ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-10 16:53:18 +0100
+Served asset /application.js - 200 OK (14ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-02-10 16:53:18 +0100
+Served asset /users.js - 200 OK (18ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-10 16:53:19 +0100
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (33.0ms)
+  Rendered users/new.html.erb within layouts/application (49.0ms)
+Completed 200 OK in 88.0ms (Views: 64.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-10 16:53:20 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-10 16:53:20 +0100
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-02-10 16:53:20 +0100
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-10 16:53:20 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-02-10 16:53:20 +0100
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-10 16:53:20 +0100
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-10 16:53:20 +0100
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-02-10 16:53:36 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZLtTlucwlKi7YaEBq6E3UMa67z4X6gdldxn0t9/qTJ4=", "user"=>{"name"=>"Piotr", "surname"=>"Kasperkiewicz", "mail"=>"aaa@bbb", "password"=>"[FILTERED]", "account_type"=>"user", "favourite"=>"adventure"}, "commit"=>"Create User"}
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36mSQL (67.0ms)[0m  [1mINSERT INTO "users" ("account_type", "created_at", "favourite", "mail", "name", "password", "surname", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_type", "user"], ["created_at", Tue, 10 Feb 2015 15:53:36 UTC +00:00], ["favourite", "adventure"], ["mail", "aaa@bbb"], ["name", "Piotr"], ["password", "aaa"], ["surname", "Kasperkiewicz"], ["updated_at", Tue, 10 Feb 2015 15:53:36 UTC +00:00]]
+  [1m[35m (145.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 225.0ms (ActiveRecord: 213.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-02-10 16:53:36 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 84.0ms (Views: 75.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-10 16:53:37 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-02-10 16:53:37 +0100
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-10 16:53:37 +0100
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-10 16:53:37 +0100
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-02-10 16:53:37 +0100
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-10 16:53:37 +0100
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-10 16:53:37 +0100
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-02-10 16:53:40 +0100
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" 
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 25.0ms (Views: 22.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-10 16:53:40 +0100
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-02-10 16:53:41 +0100
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-10 16:53:41 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-10 16:53:41 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-02-10 16:53:41 +0100
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-10 16:53:41 +0100
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-10 16:53:41 +0100
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-02-10 16:53:43 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 31.0ms (Views: 27.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-10 16:53:43 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-02-10 16:53:43 +0100
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-10 16:53:43 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-02-10 16:53:43 +0100
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-10 16:53:43 +0100
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-10 16:53:44 +0100
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-10 16:53:44 +0100
+Served asset /jquery_ujs.js - 200 OK (0ms)
