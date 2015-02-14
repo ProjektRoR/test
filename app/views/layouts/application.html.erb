@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Strona</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header id="calosc" class="navbar navbar-fixed-top ">
+  <nav id="niw">
+    <ul class="nav navbar-nav ">
+      <% if logged_in? %>
+          <li><%= link_to "#{@user.name} #{@user.surname}", @user %></li>
+          <li><%= link_to "Wyloguj", logout_path, method: "delete" %></li>
+      <% else %>
+          <li> <%= link_to "Zaloguj", login_path %> </li>
+      <% end %>
+      <li> <%= link_to "rejestracja", rejestruj_path %> </li>
+    </ul>
+  </nav>
+  <div>
+    <% if @title != "zaloguj" %>
+    <%end%>
+  </div>
+</header>
+<div id="calosc">
+
+  <%= yield %>
+
+</div>
+</body>
+</html>

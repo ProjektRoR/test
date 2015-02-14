@@ -1,0 +1,28 @@
+<% @book = Book.find_all_by_user_id(session[:user_id])%>
+<% if @book.nil? %>
+    <h4>Jeszcze nie dodano żadnej książki</h4>
+<%else%>
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <!-- Table -->
+  <table class="table table-striped">
+    <tr>
+      <td>Title</td>
+      <td>Author</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+    <% @book.each do |book| %>
+        <tr>
+          <td><%= book.title %></td>
+          <td><%= book.author %></td>
+          <td><%= link_to 'Show', book %></td>
+          <td><%= link_to 'Edit', edit_book_path(book) %></td>
+          <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+    <%end%>
+  </table>
+</div>
+<%end%>

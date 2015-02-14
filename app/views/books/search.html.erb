@@ -1,0 +1,8 @@
+<%= @q %>
+<h>Search results:</h>
+<br>
+<%-@books.each do |book| %>
+    Name: <%=book.title %>
+    <%= link_to "Show", book %>
+    <br>
+<%- end %>

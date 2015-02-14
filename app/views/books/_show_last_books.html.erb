@@ -1,0 +1,4 @@
+<% @LastBooks = Book.last(5) %>
+<% @LastBooks.each do |b| %>
+    <%= link_to  (content_tag(:h3, b.title, :class => "list-group-item-heading") + content_tag(:p, b.author, :class => "list-group-item-text")).html_safe, "#", class: "list-group-item " %>
+<% end %>

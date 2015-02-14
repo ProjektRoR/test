@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+<div id="body_user">
+  <div id="dane">
+    <p>
+      <b>Imie i Nazwisko</b>
+    <h4> <%= @user.name %> <%= @user.surname %> </h4>
+    </p>
+    <p>
+      <b>Mail:</b>
+    <h4><%= @user.mail %></h4>
+    </p>
+  </div>
+
+  <div id="menu_user">
+    <ul class="nav nav-stacked">
+      <li role="presentation"> <%= link_to 'Edytuj dane', edit_user_path(@user) %> </li>
+      <li role="presentation"> <%= link_to 'Zmień hasło', '#' %></li>
+      <li role="presentation"> <%= link_to 'Dodaj ksiażke', new_book_path %> </li>
+    </ul>
+
+    <%= link_to 'home', root_path %>
+
+    <%= link_to 'pokaż książki', ksiazki_uzytkownika_path %>
+  </div>
+  <div style="clear: both;">  </div>
+
+  <p>
+    <h4>Favourite:</h4>
+    <%= @user.favourite %>
+  </p>
+
+  <div>
+    <ul class="tabs nav nav-tabs">
+      <li role="presentation"><a href="#tab-1">Dodane książki</a></li>
+      <li role="presentation"><a href="#tab-2">Sugerowane książki</a></li>
+      <li role="presentation"><a href="#tab-3">zakładka 3</a></li>
+    </ul>
+  </div>
+  <div id="tab-1" class="tab">
+    <%= render "books/show_user_books" %>
+  </div>
+  <div id="tab-2" class="tab">
+    <h4>W tym momęcie brak podpowiedzi</h4>
+  </div>
+  <div id="tab-3" class="tab">
+    ...Treść trzeciej zakładki
+  </div>
+</div>
+

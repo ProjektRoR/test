@@ -1,0 +1,85 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+
+body {
+  padding-top: 80px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+#niw{
+  float: right;
+  li{
+    background-color: royalblue;
+
+  }
+  a{
+    color: #ffffff;
+  }
+  a:hover {
+    background-color: #a8c9ff;
+  }
+}
+
+#calosc {
+  width: 1300px;
+}
+.list-group{
+  a{
+    &:hover{
+      background-color: #a8c9ff;
+    }
+  }
+}
+
+.box_left {
+  float: left;
+  width: 250px;
+  text-align: left;
+}
+.box_center {
+  float: left;
+  border: 2px solid royalblue;
+  width: 730px;
+  padding-left: 5px;
+  margin-left:10px;
+}
+
+.box_right {
+  float: right;
+  width: 300px;
+}
+.panel {
+  border-color: royalblue;
+}
+.panel-primary {
+  background-color: royalblue;
+  padding-top: 6px;
+  padding-bottom: 5px;
+  font-size: 18px;
+  text-align: center;
+  color: #ffffff;
+}
+#ankieta{
+  width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid royalblue;
+  padding: 10px 30px 10px 30px;
+}
