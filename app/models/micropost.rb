@@ -1,7 +1,7 @@
-class Opinion < ActiveRecord::Base
+class Micropost < ActiveRecord::Base
   belongs_to :book
-  attr_accessible :content, :user_id
   default_scope -> { order(created_at: :desc) }
+  attr_accessible :content, :user_id
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 140 }
 end

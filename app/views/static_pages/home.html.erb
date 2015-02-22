@@ -1,27 +1,8 @@
 <div class="box_left ">
-<div class="panel panel-default">
-  <div class="panel panel-primary">gatunki</div>
-  <div class="panel-body">
-    <div class="list-group">
-      <%= render "books/list_menu" %>
-    </div>
-  </div>
-</div>
+  <%= render "books/list_menu" %>
 </div>
 
 <div class="box_center">
-  <h1>StaticPages#home</h1>
-  <p>Find me in app/views/static_pages/home.html.erb</p>
-  <%= link_to "pomoc", pomoc_path %>
-  <%= link_to "rejestracja", rejestruj_path %>
-  <%= link_to "zaloguj", login_path %>
-  <% if logged_in? %>
-      zalogowany użytkownik
-      <%= link_to "Log out", logout_path, method: "delete" %>
-  <% else %>
-      <%= link_to "Log in", login_path %>
-      nie zalogowany użytkownik
-  <% end %>
   <%= link_to "Lista ksiażek", books_path %><br/>
   <h>Search:</h>
   <div id="v">
@@ -36,12 +17,5 @@
 
   </div>
 <div class="box_right">
-  <div class="panel panel-default">
-    <div class="panel panel-primary">ostatnio dodane:</div>
-    <div class="panel-body">
-      <div class="list-group">
-        <%= render "books/show_last_books" %>
-      </div>
-    </div>
-  </div>
+  <%= render "books/show_last_books" %>
 </div>

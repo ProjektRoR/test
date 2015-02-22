@@ -1,11 +1,11 @@
 Strona::Application.routes.draw do
 
-  resources :opinions
+  resources :microposts
 
 
 #get "static_pages/home"
 #get "static_pages/help"
-
+  resources :opinions, only: [:create, :destroy]
   resources :books
   resources :users
   get "sessions/new"
@@ -17,6 +17,9 @@ Strona::Application.routes.draw do
   match '/rejestruj', to: 'users#new'
   match '/logout', to: 'sessions#destroy'
   match '/powrut', to: 'users#show'
+ # match '/user_info', to: 'users#user_info'
+  get  'user_info'=> 'users#user_info'
+  put 'update_user_info'=> 'users#update_user_info'
   match '/ksiazki_uzytkownika', to: 'books#wypisz_book_user'
   match '/search', to: 'books#search'
   # The priority is based upon order of creation:

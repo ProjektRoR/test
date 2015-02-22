@@ -24,6 +24,7 @@
   padding-top: 10px;
   float: right;
   width: 300px;
+  margin-bottom: 50px;
   li{
     margin-top: 5px;
     text-align: center;
@@ -49,4 +50,7 @@
   a:hover{
     background-color: #a8c9ff;
   }
+}
+#admin {
+  float: left;
 }

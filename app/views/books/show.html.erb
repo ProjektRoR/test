@@ -1,25 +1,35 @@
 <p id="notice"><%= notice %></p>
+<div class="box_left ">
+  <%= render "books/list_menu" %>
+</div>
 
-<p>
-  <b>Tytuł:</b> <%= @book.title %>
-</p>
-
-<p>
-  <b>Autor:</b> <%= @book.author %>
-</p>
-
-<p>
-  <b>Wydawnictwo:</b> <%= @book.publishing %>
-</p>
-
-<p>
-  <b>Gatunek:</b> <%= @book.genre %>
-</p>
-
-<p>
-  <b>Opis:</b> <%= @book.description %>
-</p>
-
-
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+<div class="box_center">
+  <h4>Wyniki wyszukiwania:</h4>
+  <div class="panel panel-default">
+    <!-- Table -->
+    <div id="zdjecie">
+      <%= @book.picture %>
+    </div>
+    <div id="book_dane">
+      Tytuł: <h4><%=@book.title %></h4>
+      Autor: <h4><%= @book.author %></h4>
+      Wydawnictwo: <h4><%= @book.publishing %></h4>
+      gatunek <h4><%= @book.genre %></h4>
+    </div>
+    <div id="opis_book">
+      <b>opis:</b><br/>
+      <%= @book.description %>
+    </div>
+  </div>
+  <% if @book.microposts.any? %>
+      <h3> Komentarze: (<%= @book.microposts.count %> </h3>
+      <ol class="micropost">
+        <%= render @microposts %>
+      </ol>
+  <% else %>
+      <ol> <h4>Nie dodano jeszcze komentarza</h4></ol>
+  <% end %>
+</div>
+<div class="box_right">
+  <%= render "books/show_last_books" %>
+</div>

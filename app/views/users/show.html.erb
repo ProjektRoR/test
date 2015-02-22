@@ -10,25 +10,21 @@
     <h4><%= @user.mail %></h4>
     </p>
   </div>
-
   <div id="menu_user">
     <ul class="nav nav-stacked">
       <li role="presentation"> <%= link_to 'Edytuj dane', edit_user_path(@user) %> </li>
-      <li role="presentation"> <%= link_to 'Zmień hasło', '#' %></li>
       <li role="presentation"> <%= link_to 'Dodaj ksiażke', new_book_path %> </li>
     </ul>
-
-    <%= link_to 'home', root_path %>
-
-    <%= link_to 'pokaż książki', ksiazki_uzytkownika_path %>
   </div>
+  <% if @user.account_type == "user" %>
+      <div id="menu_user">
+        <ul class="nav nav-stacked">
+          <li role="presentation"> <%= link_to 'Lista użytkowników', users_url %> </li>
+          <li role="presentation"> <%= link_to 'Lista książek', books_path %></li>
+        </ul>
+      </div>
+  <% end %>
   <div style="clear: both;">  </div>
-
-  <p>
-    <h4>Favourite:</h4>
-    <%= @user.favourite %>
-  </p>
-
   <div>
     <ul class="tabs nav nav-tabs">
       <li role="presentation"><a href="#tab-1">Dodane książki</a></li>
@@ -41,6 +37,7 @@
   </div>
   <div id="tab-2" class="tab">
     <h4>W tym momęcie brak podpowiedzi</h4>
+    <%= @user.favourite %>
   </div>
   <div id="tab-3" class="tab">
     ...Treść trzeciej zakładki

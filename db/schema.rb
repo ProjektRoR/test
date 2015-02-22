@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150213212851) do
+ActiveRecord::Schema.define(:version => 20150218185025) do
 
   create_table "books", :force => true do |t|
     t.string   "title"
@@ -26,12 +26,14 @@ ActiveRecord::Schema.define(:version => 20150213212851) do
   end
 
   create_table "opinions", :force => true do |t|
+    t.text     "content"
     t.integer  "book_id"
     t.integer  "user_id"
-    t.text     "opinion"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "opinions", ["book_id"], :name => "index_opinions_on_book_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"

@@ -1,8 +1,30 @@
 <%= @q %>
-<h>Search results:</h>
-<br>
-<%-@books.each do |book| %>
-    Name: <%=book.title %>
-    <%= link_to "Show", book %>
-    <br>
-<%- end %>
+<div class="box_left ">
+  <%= render "books/list_menu" %>
+</div>
+
+<div class="box_center">
+  <h4>Wyniki wyszukiwania:</h4>
+  <div class="panel panel-default">
+    <!-- Table -->
+    <table class="table table-striped">
+      <tr>
+        <th>Tytuł</th>
+        <th>Autor</th>
+        <th>Wydawnictwo</th>
+        <th></th>
+      </tr>
+      <%@books.each do |book| %>
+          <tr>
+            <td><%=book.title %></td>
+            <td><%=book.author %></td>
+            <td><%=book.publishing %></td>
+            <td><%= link_to "Show", book %></td>
+          </tr>
+          </table>
+      <% end %>
+      </div>
+</div>
+<div class="box_right">
+  <%= render "books/show_last_books" %>
+</div>

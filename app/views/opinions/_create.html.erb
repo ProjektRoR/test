@@ -1,0 +1,6 @@
+<%= form_for(@opinion) do |f| %>
+    <div class="field">
+      <%= f.text_area :content %>
+    </div>
+    <%= f.submit "wstaw post", class: "btn btn-primary" %>
+<% end %>
