@@ -1,3 +1,7 @@
+<% @lista = ["Kryminał","Przygodowe","Fantastyka","Naukowe","Powieść","Dramat","Thriller","Horror",
+             "Biografie","Biznes, ekonomia, marketing","Dla dzieci","Dla młodzieży","Encyklopedie, leksykony",
+             "Filozofia","Historia","Informatyka","Językoznawstwo, język polski","Kuchnia i diety","Literatura",
+             "Prawo","Poradniki"] %>
 <div id="ankieta">
 <h1>Rejestracja</h1>
 
@@ -31,8 +35,10 @@
         <%= f.password_field :password, class: 'form-control' %>
       </div>
       <div class="field">
-        <%= f.label :gatunki %><br />
-        <%= f.text_field :favourite, class: 'form-control' %>
+        Proszę o zaznaczenie ulubionych gatónków książek <br/> (można zostawić puste)<br/>
+        <% @lista.each do |a| %>
+            <%= check_box_tag("genre[]", a) %> <%= f.label a %><br/>
+        <%end%>
       </div>
       <div class="actions">
         <%= f.submit "Zapisz dane", class: "btn btn-primary form-control" %>

@@ -13,6 +13,7 @@ Strona::Application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
+  match '/opinia', to: 'books#dodaj_opinie'
   match '/pomoc', to: 'static_pages#help'
   match '/rejestruj', to: 'users#new'
   match '/logout', to: 'sessions#destroy'
@@ -22,6 +23,8 @@ Strona::Application.routes.draw do
   put 'update_user_info'=> 'users#update_user_info'
   match '/ksiazki_uzytkownika', to: 'books#wypisz_book_user'
   match '/search', to: 'books#search'
+  match '/all_books', to: 'books#show_all_books'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -14,9 +14,7 @@ class BooksController < ApplicationController
   # GET /books/1.json
   def show
     @book = Book.find(params[:id])
-    if @book.microposts.any?
-      @micropost = @book.microposts.find(params[:id])
-    end
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @book }
@@ -46,17 +44,18 @@ class BooksController < ApplicationController
   # POST /books
   # POST /books.json
   def create
-    @book = Book.new(params[:book])
-    @book.user_id= session[:user_id]
-    respond_to do |format|
-      if @book.save
-        format.html { redirect_to @book, notice: 'Book was successfully created.' }
-        format.json { render json: @book, status: :created, location: @book }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @book.errors, status: :unprocessable_entity }
-      end
-    end
+        @book = Book.new(params[:book])
+        @book.user_id= session[:user_id]
+        @book.picture_file_name= 'default_book.jpg'
+        respond_to do |format|
+          if @book.save
+            format.html { redirect_to @book, notice: 'Book was successfully created.' }
+            format.json { render json: @book, status: :created, location: @book }
+          else
+            format.html { render action: "new" }
+            format.json { render json: @book.errors, status: :unprocessable_entity }
+          end
+        end
   end
 
   # PUT /books/1
@@ -82,7 +81,7 @@ class BooksController < ApplicationController
     @book.destroy
 
     respond_to do |format|
-      format.html { redirect_to books_url }
+      format.html { redirect_to user_path(session[:user_id]) }
       format.json { head :no_content }
     end
   end
@@ -93,5 +92,15 @@ class BooksController < ApplicationController
       else
         @books = Book.where("title like '%#{params[:title]}%'")
       end
+  end
+
+  def dodaj_opinie
+    @micropost = Micropost.new
+    @micropost.content= params[:content]
+    @micropost.user_id= session[:user_id]
+    @micropost.book_id= session[:temp]
+    if @micropost.save
+      redirect_to book_path(session[:temp])
     end
+  end
 end

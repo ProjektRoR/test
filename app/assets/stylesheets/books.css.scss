@@ -1,3 +1,30 @@
 // Place all the styles related to the Books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#zdjecie_book{
+  width: 200px;
+  float: left;
+}
+
+#info{
+  width: 400px;
+  float: right;
+}
+
+.panel-default{
+  padding-left: 20px;
+  padding-right: 10px;
+}
+
+.zdjecie_mini{
+  width: 54;
+  height: 80px;
+}
+
+.zdjecie{
+  margin-left: auto;
+  margin-right: auto;
+
+}

@@ -9,6 +9,7 @@
 </head>
 <body>
 <header id="calosc" class="navbar ">
+  <%= link_to image_tag("logo_ksiazki_web.png", class: "logo" ), root_path %>
   <nav id="niw">
     <% if @title_page != "zaloguj" %>
     <ul class="nav navbar-nav ">
@@ -22,8 +23,15 @@
     </ul>
     <% end %>
   </nav>
-  <div>
+  <div id="wyszukiwanie">
     <% if @title_page != "zaloguj" %>
+        <%= form_for Book.new, :url => "search" do |f| %>
+            <div class="form-group">
+              <%= f.label :Tytuł, class: "v" %>
+              <%= text_field_tag :title, params[:title], class: "pole_serch" %>
+              <%= f.submit "Szukaj", class: "btn btn-default" %>
+            </div>
+        <%- end %>
     <%end%>
   </div>
 </header>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150218185025) do
+ActiveRecord::Schema.define(:version => 20150221183333) do
 
   create_table "books", :force => true do |t|
     t.string   "title"
@@ -20,10 +20,23 @@ ActiveRecord::Schema.define(:version => 20150218185025) do
     t.string   "genre"
     t.integer  "user_id"
     t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.binary   "picture"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
+
+  create_table "microposts", :force => true do |t|
+    t.text     "content"
+    t.integer  "book_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "microposts", ["book_id"], :name => "index_microposts_on_book_id"
 
   create_table "opinions", :force => true do |t|
     t.text     "content"

@@ -16,7 +16,7 @@
       <li role="presentation"> <%= link_to 'Dodaj ksiażke', new_book_path %> </li>
     </ul>
   </div>
-  <% if @user.account_type == "user" %>
+  <% if @user.account_type == "admin" %>
       <div id="menu_user">
         <ul class="nav nav-stacked">
           <li role="presentation"> <%= link_to 'Lista użytkowników', users_url %> </li>
@@ -29,18 +29,21 @@
     <ul class="tabs nav nav-tabs">
       <li role="presentation"><a href="#tab-1">Dodane książki</a></li>
       <li role="presentation"><a href="#tab-2">Sugerowane książki</a></li>
-      <li role="presentation"><a href="#tab-3">zakładka 3</a></li>
+      <% if @user.account_type == "admin" %>
+      <li role="presentation"><a href="#tab-3">aktualnosci</a></li>
+      <% end %>
     </ul>
   </div>
   <div id="tab-1" class="tab">
     <%= render "books/show_user_books" %>
   </div>
   <div id="tab-2" class="tab">
-    <h4>W tym momęcie brak podpowiedzi</h4>
-    <%= @user.favourite %>
+    <%= render "books/proposals_books" %>
   </div>
+  <% if @user.account_type == "admin" %>
   <div id="tab-3" class="tab">
-    ...Treść trzeciej zakładki
+    <%= render "users/show_admin_panel" %>
   </div>
+  <% end %>
 </div>
 

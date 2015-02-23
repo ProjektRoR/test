@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_filter :logged_in_user, :only =>  [:index, :edit, :update, :destroy]
   before_filter :correct_user,   :only =>  [:edit, :update]
+
   # GET /users
   # GET /users.json
   def index
@@ -46,6 +47,16 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
+    if params[:genre].nil?
+      @user.favourite=" "
+      else
+        zmienna = " "
+        params[:genre].each do |g|
+          zmienna = zmienna + " " + g
+        end
+        @user.favourite=zmienna
+    end
+
     @user.account_type="user"
     respond_to do |format|
       if @user.save
@@ -64,7 +75,15 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.favourite=params[:genre]
+    if params[:genre].nil?
+
+    else
+      zmienna = " "
+      params[:genre].each do |g|
+        zmienna = zmienna + " " + g
+      end
+      @user.favourite=zmienna
+    end
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to @user, notice: 'Udana zmiana danych' }
@@ -87,16 +106,25 @@ class UsersController < ApplicationController
     end
   end
 
-
  def logged_in_user
    unless logged_in?
      store_location
      flash[:danger] = "Please log in."
      redirect_to login_path
    end
+
  end
   def correct_user
     @user = User.find(params[:id])
     redirect_to(root_url) unless current_user?(@user)
+  end
+
+  def update_user_info
+    @user = User.find(session[:temp])
+    @user.account_type= params[:theme]
+    if @user.update_attribute(:account_type, params[:theme])
+      redirect_to users_path
+    end
+
   end
 end

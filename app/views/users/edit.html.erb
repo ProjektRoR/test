@@ -31,10 +31,6 @@
         <%= f.text_field :mail, class: 'form-control'%>
       </div>
       <div class="field">
-        <%= f.label :haslo %><br />
-        <%= f.password_field :password, class: 'form-control'%>
-      </div>
-      <div class="field">
         <% @lista.each do |a| %>
             <%= check_box_tag("genre[]", a) %> <%= f.label a %><br/>
          <%end%>

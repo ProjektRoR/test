@@ -9,6 +9,7 @@
     <!-- Table -->
     <table class="table table-striped">
       <tr>
+        <th></th>
         <th>Tytuł</th>
         <th>Autor</th>
         <th>Wydawnictwo</th>
@@ -16,14 +17,15 @@
       </tr>
       <%@books.each do |book| %>
           <tr>
+            <td><%= image_tag book.picture_file_name, class: "zdjecie_mini" %></td>
             <td><%=book.title %></td>
             <td><%=book.author %></td>
             <td><%=book.publishing %></td>
-            <td><%= link_to "Show", book %></td>
+            <td><%= link_to "Szczegóły", book %></td>
           </tr>
-          </table>
       <% end %>
-      </div>
+      </table>
+  </div>
 </div>
 <div class="box_right">
   <%= render "books/show_last_books" %>

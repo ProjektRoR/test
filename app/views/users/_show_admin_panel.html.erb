@@ -1,0 +1,24 @@
+<div class="panel panel-default">
+  <div><h4>ostatnio dodane książki</h4></div>
+  <% @book = Book.find_all_by_picture_file_name("default_book.jpg")%>
+  <table class="table table-striped">
+    <tr>
+      <td>Title</td>
+      <td>Author</td>
+      <td>Wydawnictwo</td>
+      <td>dodane przez</td>
+    </tr>
+
+    <% @book.each do |book| %>
+        <tr>
+          <td><%= book.title %></td>
+          <td><%= book.author %></td>
+          <td><%= book.publishing %></td>
+          <td>
+            <% @user = User.find(book.user_id) %>
+            <%= @user.name %> <%= @user.surname %>
+          </td>
+        </tr>
+    <%end%>
+  </table>
+</div>
