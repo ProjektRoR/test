@@ -1,0 +1,6 @@
+<%= form_for Book.new, :url =>{:action => "dodaj_opinie"}, :html => { :method => "ppost" }  do |f| %>
+<div class="field">
+<%= f.text_area :content, placeholder: "Compose new micropost..." %>
+</div>
+    <%= f.submit "wstaw post", class: "btn btn-primary" %>
+<% end %>

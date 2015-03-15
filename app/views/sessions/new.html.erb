@@ -1,0 +1,18 @@
+<div id="ankieta">
+  <h1>Logowanie</h1>
+  <%= form_for(:session, url: login_path) do |f| %>
+
+      <div class="field">
+        <%= f.label :mail %><br />
+        <%= f.text_field :mail, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, class: 'form-control' %>
+      </div>
+      <div class="actions">
+        <%= f.submit "zaloguj", class: "btn btn-primary form-control" %>
+      </div>
+  <%end%>
+  <p>Nowy użytkownik? <%= link_to "Zarejestruj się", rejestruj_path %></p>
+</div>

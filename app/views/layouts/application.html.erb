@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Strona</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header id="calosc" class="navbar ">
+  <%= link_to image_tag("logo_ksiazki_web.png", class: "logo" ), root_path %>
+  <nav id="niw">
+    <% if @title_page != "zaloguj" %>
+    <ul class="nav navbar-nav ">
+      <% if logged_in? %>
+          <li><%= link_to session[:user_name] +" "+ session[:user_surname], user_path(current_user) %></li>
+          <li><%= link_to "Wyloguj", logout_path, method: "delete" %></li>
+      <% else %>
+          <li> <%= link_to "Zaloguj", login_path %> </li>
+      <% end %>
+      <li> <%= link_to "rejestracja", rejestruj_path %> </li>
+    </ul>
+    <% end %>
+  </nav>
+  <div id="wyszukiwanie">
+    <% if @title_page != "zaloguj" %>
+        <%= form_for Book.new, :url => "search" do |f| %>
+            <div class="form-group">
+              <%= f.label :Tytuł, class: "v" %>
+              <%= text_field_tag :title, params[:title], class: "pole_serch" %>
+              <%= f.submit "Szukaj", class: "btn btn-default" %>
+            </div>
+        <%- end %>
+    <%end%>
+  </div>
+</header>
+<div id="calosc">
+
+  <%= yield %>
+
+</div>
+<div id="stopka">
+
+    <div>
+      <%= link_to "Contact", static_pages_contact_path %>
+    </div>
+
+    <div>
+      <%= link_to "Terms", static_pages_terms_path %>
+    </div>
+    <div>
+      <%= link_to "About Us", static_pages_about_us_path %>
+    </div>
+
+</div>
+</body>
+</html>

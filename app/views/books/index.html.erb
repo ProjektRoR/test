@@ -1,0 +1,35 @@
+<div id="body_list">
+  <div class="panel panel-default">
+    <div class="panel panel-primary">Lista książek</div>
+
+  <table class="table table-striped">
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Publishing</th>
+      <th>Type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <% @books.each do |book| %>
+        <tr>
+          <td><%= book.title %></td>
+          <td><%= book.author %></td>
+          <td><%= book.publishing %></td>
+          <td><%= book.genre %></td>
+          <td><%= link_to 'Show', book %></td>
+          <td><%= link_to 'Edit', edit_book_path(book) %></td>
+          <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+    <% end %>
+  </table>
+
+    </div>
+  <%= link_to 'Powrót', user_path(session[:user_id]) %>,
+  <%= link_to 'Nowa książka', new_book_path %>
+</div>
+
+
+
+

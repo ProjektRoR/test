@@ -1,0 +1,33 @@
+<div class="panel panel-default">
+<% if @user.favourite == nil %>
+    <h4> W tym momęcie brak propozycji </h4>
+<% else %>
+    <% boo = false %>
+    <% @zmien = @user.favourite.split(",") %>
+      <table class="table table-striped">
+        <tr>
+          <td></td>
+          <td>Title</td>
+          <td>Author</td>
+          <td>Wydawnictwo</td>
+          <td></td>
+        </tr>
+    <% @zmien.each do |pro| %>
+        <% @book = Book.find_last_by_genre(pro) %>
+        <% if @book != nil %>
+                <tr>
+                  <td><%= image_tag @book.picture_file_name, class: "zdjecie_mini" %></td>
+                  <td><%= @book.author %></td>
+                  <td><%= @book.author %></td>
+                  <td><%= @book.publishing %></td>
+                  <td><%= link_to "Szczegóły", book_path(@book.id)%></td>
+                </tr>
+                <% boo = true %>
+            <%end%>
+        <% end %>
+        </table>
+    <% if boo == false %>
+        <h4> w tym momęcie nie mamy propozycji </h4>
+    <% end %>
+<% end %>
+</div>
