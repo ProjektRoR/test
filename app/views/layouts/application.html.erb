@@ -35,27 +35,32 @@
     <%end%>
   </div>
 </header>
-<div id="calosc">
+<div class="conteiner">
 
   <%= yield %>
 
 </div>
-<<<<<<< HEAD
-<div id="stopka">
+                  <div id="stopka">
+                    <small>© 2015</small>
+                    <nav>
+                    <ul>
+                      <li><%= link_to "O nas",   static_pages_about_us_path %></li>
+                      <li><%= link_to "Kontakt", static_pages_contact_path %></li>
+                      <li><%= link_to "Regulamin", static_pages_terms_path %></li>
+                    </ul></nav>
+                  </div>
 
-    <div>
-      <%= link_to "Contact", static_pages_contact_path %>
-    </div>
+                  <!--<footer class="footer">
 
-    <div>
-      <%= link_to "Terms", static_pages_terms_path %>
-    </div>
-    <div>
-      <%= link_to "About Us", static_pages_about_us_path %>
-    </div>
+  <nav>
+    <ul>
+      <li><%= link_to "O nas",   static_pages_about_us_path %></li>
+      <li><%= link_to "Kontakt", static_pages_contact_path %></li>
+      <li><%= link_to "Regulamin", static_pages_terms_path %></li>
+    </ul>
+  </nav>
 
-</div>
-=======
->>>>>>> 5a788f213271fd56b68c3edfb7bfc239094a1d5c
+</footer>-->
+
 </body>
 </html>

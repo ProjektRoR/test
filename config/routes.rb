@@ -24,14 +24,11 @@ Strona::Application.routes.draw do
   match '/ksiazki_uzytkownika', to: 'books#wypisz_book_user'
   match '/search', to: 'books#search'
   match '/all_books', to: 'books#show_all_books'
-<<<<<<< HEAD
   get 'static_pages/about_us'
   get 'static_pages/terms'
   get 'static_pages/contact'
 
 
-=======
->>>>>>> 5a788f213271fd56b68c3edfb7bfc239094a1d5c
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

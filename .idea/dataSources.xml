@@ -4,11 +4,7 @@
     <data-source source="LOCAL" name="Rails Strona: development" uuid="9e0168b3-d656-4e8d-99d3-d7f38d602210">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-<<<<<<< HEAD
-      <jdbc-url>jdbc:sqlite:C:\Users\Araliz\Documents\rails_projects\strona-master\db\development.sqlite3</jdbc-url>
-=======
-      <jdbc-url>jdbc:sqlite:D:\Nowy folder\strona-master\db\development.sqlite3</jdbc-url>
->>>>>>> 5a788f213271fd56b68c3edfb7bfc239094a1d5c
+      <jdbc-url>jdbc:sqlite:C:\Users\Bary\Downloads\strona-b9f641ee697b131a3004c75ab1d532290f20eebd\strona-b9f641ee697b131a3004c75ab1d532290f20eebd\db\development.sqlite3</jdbc-url>
       <libraries />
     </data-source>
   </component>

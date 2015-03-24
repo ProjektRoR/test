@@ -13,8 +13,5 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-<<<<<<< HEAD
 **/.idea/workspace.xml
 **/.idea/tasks.xml
-=======
->>>>>>> 5a788f213271fd56b68c3edfb7bfc239094a1d5c

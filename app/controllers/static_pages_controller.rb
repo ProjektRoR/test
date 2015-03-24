@@ -5,7 +5,6 @@ class StaticPagesController < ApplicationController
 
   def help
   end
-<<<<<<< HEAD
 
   def terms
   end
@@ -15,6 +14,4 @@ class StaticPagesController < ApplicationController
 
   def contact
   end
-=======
->>>>>>> 5a788f213271fd56b68c3edfb7bfc239094a1d5c
 end
