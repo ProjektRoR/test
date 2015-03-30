@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+<div class="box_left ">
+  <%= render "books/list_menu" %>
+</div>
+
+<div class="box_center">
+  <div class="panel panel-default">
+    <!-- Table -->
+    <div id="zdjecie_book">
+      <%= image_tag (@book.picture_file_name) %>
+    </div>
+    <div id="info">
+      Tytuł: <h4><%=@book.title %></h4>
+      Autor: <h4><%= @book.author %></h4>
+      Wydawnictwo: <h4><%= @book.publishing %></h4>
+      gatunek <h4><%= @book.genre %></h4>
+    </div>
+    <div style="clear: both;">  </div>
+    <div id="opis_book">
+      <b>opis:</b><br/>
+      <%= @book.description %>
+    </div>
+  </div>
+  <div><b> Komentarze: </b></div>
+  <div>
+        <%= render "microposts/show_micropost" %>
+  </div>
+  <div id="opinion">
+  <% if logged_in? %>
+    <%= render "microposts/micropost_form" %>
+      <% else %>
+    Aby dodać komentarz <%= link_to "zaloguj się", login_path %><br/>
+    jeżeli nie masz konta <%= link_to "zarejestruj się", rejestruj_path %>
+  <% end %>
+    </div>
+</div>
+
+<div class="box_right">
+  <%= render "books/show_last_books" %>
+</div>

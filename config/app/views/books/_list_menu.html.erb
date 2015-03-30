@@ -1,0 +1,17 @@
+<% @lista = ["Kryminał","Przygodowe","Fantastyka","Naukowe","Powieść","Dramat","Thriller","Horror",
+             "Biografie","Biznes, ekonomia, marketing","Dla dzieci","Dla młodzieży","Encyklopedie, leksykony",
+             "Filozofia","Historia","Informatyka","Językoznawstwo, język polski","Kuchnia i diety","Literatura",
+             "Prawo","Poradniki"] %>
+<div class="panel panel-default">
+  <div class="panel panel-primary">gatunki</div>
+  <div class="panel-body">
+    <div class="list-group">
+      <% @lista.each do |list| %>
+          <% @b = Book.find_all_by_genre(list).count %>
+          <% if @b > 0 %>
+              <%= link_to ((list + content_tag(:span, @b, :class => "badge") ).html_safe), search_path(:gatunek => list), :class => 'list-group-item' %>
+          <% end %>
+      <%end%>
+    </div>
+  </div>
+</div>

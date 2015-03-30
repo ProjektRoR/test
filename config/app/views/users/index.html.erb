@@ -1,0 +1,30 @@
+<div id="body_list">
+  <div class="panel panel-default">
+    <div class="panel panel-primary">Lista użytkowników</div>
+    <!-- Table -->
+    <table class="table table-striped">
+      <tr>
+        <th>Imię</th>
+        <th>Nazwisko</th>
+        <th>Mail</th>
+        <th>Uprawnienia</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <% @users.each do |user| %>
+          <tr>
+            <td><%= user.name %></td>
+            <td><%= user.surname %></td>
+            <td><%= user.mail %></td>
+            <td><%= user.account_type %></td>
+            <td><%= link_to 'Informacja', user_info_path(:id_u => user) %></td>
+            <td><%= link_to 'Usuń konto', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+      <% end %>
+    </table>
+  </div>
+  <%= link_to 'Powrót', user_path(session[:user_id]) %>
+  <%= link_to 'Nowy użytkownik', new_user_path %>
+</div>

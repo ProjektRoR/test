@@ -1,0 +1,18 @@
+<div class="box_left">
+  <%= render "books/list_menu" %>
+</div>
+
+<div class="box_center">
+  Zapraszamy do przeglądnięcia naszej bazy książek jak i dzielenia się opiniami na ich temat<br/>
+  <div id="link_book">
+    <%= link_to "Lista ksiażek", all_books_path, class: "btn btn-primary form-control" %>
+  </div>
+    <div>
+      zachęcamy do czytania książek ponieważ rozwijają kreatywnosć i fantazje czytelników<br/>
+
+    </div>
+  </div>
+
+<div class="box_right">
+  <%= render "books/show_last_books" %>
+</div>

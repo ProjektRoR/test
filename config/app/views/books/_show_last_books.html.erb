@@ -1,0 +1,11 @@
+<div class="panel panel-default">
+  <div class="panel panel-primary">ostatnio dodane: </div>
+  <div class="panel-body">
+    <div class="list-group">
+      <% @LastBooks = Book.last(5).reverse %>
+      <% @LastBooks.each do |b| %>
+          <%= link_to  (content_tag(:h4, b.title, :class => "list-group-item-heading") + content_tag(:p, b.author, :class => "list-group-item-text")).html_safe, book_path(b.id), class: "list-group-item " %>
+      <% end %>
+    </div>
+  </div>
+</div>
