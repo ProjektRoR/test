@@ -30,16 +30,21 @@
         <%= f.label :mail %><br />
         <%= f.text_field :mail, class: 'form-control'%>
       </div>
-       <div class="field">
-          <%= f.label :password %><br />
-          <%= f.text_field :password, class: 'form-control'%>
-       </div>
+
+      <div class="field">   <!--modified by pk 21.04.2015-->
+        <%= f.label :"Hasło: " %><br />
+        <%= f.password_field :password, class: 'form-control'%>
+      </div>
+      <div class="field">
+        <%= f.label :"Powtórz hasło: " %><br />
+        <%= f.password_field :password_confirmation, class: 'form-control'%>
+      </div>
+
       <div class="field">
         <% @lista.each do |a| %>
             <%= check_box_tag("genre[]", a) %> <%= f.label a %><br/>
          <%end%>
       </div>
-
       <div class="actions">
         <%= f.submit "zapisz Dane", class: "btn btn-primary form-control"%>
       </div>
