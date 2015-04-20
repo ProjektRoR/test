@@ -34,14 +34,8 @@
         <%= f.label :Hasło %><br />
         <%= f.password_field :password, class: 'form-control' %>
       </div>
-
-      <div class="field">       <!--modified by pk 20.04.2015-->
-        <%= f.label :Powtórz_hasło %><br />
-        <%= f.password_field :password_confirmation, class: 'form-control' %>
-      </div>
-
       <div class="field">
-        Proszę o zaznaczenie ulubionych gatunków książek <br/> (można zostawić puste)<br/>
+        Proszę o zaznaczenie ulubionych gatónków książek <br/> (można zostawić puste)<br/>
         <% @lista.each do |a| %>
             <%= check_box_tag("genre[]", a) %> <%= f.label a %><br/>
         <%end%>

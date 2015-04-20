@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="Rails Strona: development" uuid="9e0168b3-d656-4e8d-99d3-d7f38d602210">
-    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
-  </data-source>
-  <data-source name="Rails strona: development" uuid="1e0822e8-75ff-4760-8b15-80a86feb4b02">
+  <data-source source="LOCAL" name="Rails Strona: development" uuid="9e0168b3-d656-4e8d-99d3-d7f38d602210">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
 </component>

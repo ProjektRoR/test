@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1483367009">
+  <component name="DataSourceManagerImpl" format="xml" hash="2485523517">
     <data-source source="LOCAL" name="Rails Strona: development" uuid="9e0168b3-d656-4e8d-99d3-d7f38d602210">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\pk\projekty_github\strona\db\development.sqlite3</jdbc-url>
-      <libraries />
-    </data-source>
-    <data-source source="LOCAL" name="Rails strona: development" uuid="1e0822e8-75ff-4760-8b15-80a86feb4b02">
-      <driver-ref>sqlite.xerial</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\pk\projekty_github\strona\db\development.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\Bary\Downloads\strona-b9f641ee697b131a3004c75ab1d532290f20eebd\strona-b9f641ee697b131a3004c75ab1d532290f20eebd\db\development.sqlite3</jdbc-url>
       <libraries />
     </data-source>
   </component>
 </project>
+
