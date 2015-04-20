@@ -1,5 +1,0 @@
-<%= form_for @book, :url =>{:action => "dodaj_opinie"}, :html => { :method => "post" } do |f| %>
-    <%= text_area_tag :content, params[:content], :cols => 45, :rows => 10 %><br/>
-    <% session[:temp] = @book.id %>
-    <%= f.submit "zapisz opinie", class: "btn btn-default" %>
-<% end %>

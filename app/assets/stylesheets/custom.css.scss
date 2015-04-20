@@ -2,7 +2,12 @@
 @import "bootstrap";
 
 
+html{
+  position: relative;
+  min-height: 100%;
+  width: 100%;
 
+}
 
 
 section {
@@ -22,8 +27,8 @@ textarea {
 }
 
 .logo{
-  margin-top: 10px;
-  margin-left: 150px;
+  margin-top: auto;
+  margin-left: auto;
   a.link{
     background-color: #ffffff;
   }
@@ -62,7 +67,8 @@ textarea {
 }
 
 #calosc {
-  width: 1300px;
+  width: 100%;
+  position: relative;
 }
 .list-group{
   a{
@@ -74,7 +80,8 @@ textarea {
 
 .box_left {
   float: left;
-  width: 250px;
+  //width: 250px;
+  width: 25%;
   text-align: left;
 }
 #link_book{
@@ -91,7 +98,7 @@ textarea {
 .box_center {
   float: left;
   border: 2px solid royalblue;
-  width: 730px;
+  width: 48%;
   padding-top: 18px;
   padding-left: 10px;
   padding-bottom: 30px;
@@ -104,7 +111,7 @@ textarea {
 
 .box_right {
   float: right;
-  width: 300px;
+  width: 25%;
 }
 .panel {
   border-color: royalblue;
@@ -162,7 +169,7 @@ textarea {
     }
 }
 
-/* footer */
+/* footer
 
 footer {
   bottom: 0;
@@ -195,29 +202,40 @@ footer ul li {
   float: left;
   margin-left: 15px;
 }
+
+*/
+
 #stopka {
-    clear:both;
-    width: 100%;
     background: royalblue;
     clear:both;
     height: 30px;
-
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  color: white;
+  padding: 4px;
 }
 #stopka ul {
   float: right;
   list-style: none;
+
 }
 #stopka ul li{
   float: left;
   margin-left: 15px;
+
+
 }
+
 #stopka a {
-  color: #555;
+  color: white;
 }
 
 #stopka a:hover {
-  color: #222;
+  color: white;
 }
 #stopka small {
   float: left;
+  padding: 4px;
+
 }
