@@ -9,9 +9,9 @@ gem 'bootstrap-will_paginate', '0.0.10'
 # gem "paperclip", '3.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+group :development, :test do
 gem 'sqlite3'
-
+end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -39,3 +39,6 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+group :production do
+  gem 'pg'
+end
